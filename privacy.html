@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DerNotes — Privacy Policy / Gizlilik Politikası</title>
+<style>
+  :root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #e8e8e8;
+    --muted: #aaaaaa;
+    --accent: #ff7a1a;
+    --border: #2a2a2a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  h1 {
+    font-size: 28px;
+    margin: 0 0 4px;
+    color: #fff;
+  }
+  h2 {
+    font-size: 21px;
+    margin: 40px 0 12px;
+    color: #fff;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  h3 { font-size: 17px; margin: 24px 0 8px; color: #fff; }
+  p, li { color: var(--text); }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+  a { color: var(--accent); }
+  .langbar {
+    display: flex; gap: 10px; margin: 20px 0 8px; flex-wrap: wrap;
+  }
+  .langbar a {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .divider {
+    margin: 64px 0 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+  .note {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 14px 16px;
+    border-radius: 6px;
+    margin: 18px 0;
+  }
+  footer {
+    margin-top: 56px;
+    color: var(--muted);
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
 
+<!-- ══════════════════ ENGLISH ══════════════════ -->
+<h1>Privacy Policy</h1>
+<p class="meta">DerNotes &middot; Last updated: 19 September 2026</p>
+
+<div class="langbar">
+  <a href="#tr">Türkçe için tıklayın ↓</a>
+  <a href="terms.html">Terms of Service</a>
+</div>
+
+<p>This Privacy Policy explains what data the DerNotes mobile application ("the App") handles, how it is used, and who it is shared with. By using the App, you agree to the practices described here.</p>
+
+<h2>1. Who we are</h2>
+<p>DerNotes is developed and operated by an independent developer. For any question about this policy or about your data, contact: <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a>.</p>
+
+<h2>2. Your notes are stored on your device</h2>
+<p>The notes you write are stored locally on your device, in the App's own private storage. We do not run a server that keeps a copy of your notes, and we cannot browse, read or recover them.</p>
+<p>Because your notes live only on your device, they are lost if you uninstall the App or reset your device. The App provides an export feature so you can back your notes up to a file yourself. Keeping that backup safe is your responsibility.</p>
+
+<h2>3. No account, no sign-up</h2>
+<p>The App does not ask you to register, and does not collect your name, e-mail address, phone number or any other directly identifying information.</p>
+<p>To make the AI features work, the App creates an <strong>anonymous identity</strong> through Firebase Authentication. This is a random identifier with no personal information attached to it. We use it for one purpose only: to count how much of the daily free AI allowance ("energy") a device has used. This identifier is regenerated if you uninstall and reinstall the App.</p>
+
+<h2>4. What happens when you use an AI feature</h2>
+<p>The AI features are the only case in which content leaves your device. This only happens when you actively trigger them — for example by opening the AI panel, typing the in-note trigger keyword, or selecting text and choosing an AI action from the toolbar. The App never sends your notes in the background.</p>
+<p>When you trigger an AI feature, the following is sent:</p>
+<ul>
+  <li>the text you are working on (the selected text, the current note, or the part of the note above your cursor, depending on the feature),</li>
+  <li>the instruction you gave (for example the target language for a translation),</li>
+  <li>your anonymous identifier, used to check your remaining energy.</li>
+</ul>
+<p>This request travels through our own processing service, hosted on <strong>Cloudflare Workers</strong>, which forwards it to <strong>OpenRouter</strong>. OpenRouter is an AI routing platform that passes the request to one of several third-party AI model providers. Depending on availability, your text may be processed by models such as DeepSeek, Qwen (Alibaba) or MiniMax, and by the infrastructure providers that host them.</p>
+
+<div class="note">
+  <strong>Please note:</strong> these AI providers operate in various countries, including China. Your text may therefore be processed on servers outside your own country, under that country's laws. If you do not want a particular piece of text to be processed this way, simply do not run an AI feature on it — the rest of the App works entirely offline.
+</div>
+
+<p>We do not use your notes to train any AI model. However, each AI provider is an independent company with its own privacy and data-retention practices, and we do not control them. Our processing service does not log or store the content of your notes.</p>
+
+<h2>5. Energy and advertising</h2>
+<p>The App includes an "energy" system that limits how much AI processing is available for free each day. Your anonymous identifier, your remaining energy and the number of rewarded ads you have watched today are stored in a Cloudflare key-value store. These records expire automatically and contain no personal information.</p>
+<p>You may choose to watch a rewarded advertisement to restore energy. Ads are provided by <strong>Google AdMob</strong>. When you watch an ad, Google may collect data such as your advertising identifier and device information in accordance with its own policies. You can review these at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's privacy page</a>. Ads are entirely optional — the App is fully usable without ever watching one.</p>
+
+<h2>6. Permissions</h2>
+<ul>
+  <li><strong>Internet access</strong> — required only for AI features and advertisements.</li>
+  <li><strong>Notifications</strong> — requested only at the moment you first pin a note to your notification bar. If you decline, only that feature is unavailable; everything else keeps working.</li>
+</ul>
+
+<h2>7. Children</h2>
+<p>The App is not directed at children under 13, and we do not knowingly collect information from them.</p>
+
+<h2>8. Your choices</h2>
+<ul>
+  <li>Use the App fully offline by not triggering AI features.</li>
+  <li>Export your notes at any time from the settings screen.</li>
+  <li>Delete all locally stored data by uninstalling the App or clearing its storage from your device settings.</li>
+  <li>Contact us at <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a> with any question or request regarding your data.</li>
+</ul>
+
+<h2>9. Changes to this policy</h2>
+<p>We may update this policy as the App changes — for example if we add or replace an AI provider. The date at the top of this page always shows the latest revision. Continuing to use the App after a change means you accept the updated policy.</p>
+
+<hr class="divider">
+
+<!-- ══════════════════ TÜRKÇE ══════════════════ -->
+<h1 id="tr">Gizlilik Politikası</h1>
+<p class="meta">DerNotes &middot; Son güncelleme: 19 Eylül 2026</p>
+
+<div class="langbar">
+  <a href="#">↑ For English</a>
+  <a href="terms.html">Kullanım Şartları</a>
+</div>
+
+<p>Bu Gizlilik Politikası, DerNotes mobil uygulamasının ("Uygulama") hangi verileri işlediğini, bunları nasıl kullandığını ve kimlerle paylaştığını açıklar. Uygulamayı kullanarak burada anlatılan uygulamaları kabul etmiş olursunuz.</p>
+
+<h2>1. Biz kimiz</h2>
+<p>DerNotes bağımsız bir geliştirici tarafından geliştirilmekte ve işletilmektedir. Bu politika veya verilerinizle ilgili her türlü soru için: <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a>.</p>
+
+<h2>2. Notlarınız cihazınızda saklanır</h2>
+<p>Yazdığınız notlar, cihazınızda, Uygulamanın kendi özel depolama alanında saklanır. Notlarınızın bir kopyasını tutan bir sunucumuz yoktur; notlarınızı göremez, okuyamaz veya kurtaramayız.</p>
+<p>Notlarınız yalnızca cihazınızda bulunduğu için, Uygulamayı kaldırırsanız veya cihazınızı sıfırlarsanız kaybolurlar. Uygulama, notlarınızı kendiniz bir dosyaya yedekleyebilmeniz için dışa aktarma özelliği sunar. Bu yedeği güvende tutmak sizin sorumluluğunuzdadır.</p>
+
+<h2>3. Hesap yok, kayıt yok</h2>
+<p>Uygulama sizden kayıt olmanızı istemez; adınızı, e-posta adresinizi, telefon numaranızı veya sizi doğrudan tanımlayan başka bir bilgiyi toplamaz.</p>
+<p>Yapay zekâ özelliklerinin çalışabilmesi için Uygulama, Firebase Authentication aracılığıyla <strong>anonim bir kimlik</strong> oluşturur. Bu, hiçbir kişisel bilgiye bağlı olmayan rastgele bir tanımlayıcıdır. Bunu tek bir amaçla kullanırız: bir cihazın günlük ücretsiz yapay zekâ hakkının ("enerji") ne kadarını kullandığını saymak. Uygulamayı kaldırıp yeniden kurarsanız bu tanımlayıcı yeniden oluşturulur.</p>
+
+<h2>4. Bir yapay zekâ özelliği kullandığınızda ne olur</h2>
+<p>İçeriğin cihazınızdan çıktığı tek durum yapay zekâ özellikleridir. Bu da yalnızca siz bu özellikleri bilerek tetiklediğinizde gerçekleşir — örneğin yapay zekâ panelini açtığınızda, not içindeki tetikleyici kelimeyi yazdığınızda ya da bir metni seçip araç çubuğundan bir yapay zekâ işlemi seçtiğinizde. Uygulama notlarınızı asla arka planda göndermez.</p>
+<p>Bir yapay zekâ özelliğini tetiklediğinizde şunlar gönderilir:</p>
+<ul>
+  <li>üzerinde çalıştığınız metin (özelliğe göre: seçtiğiniz metin, o anki notunuz veya imlecinizin üzerinde kalan not bölümü),</li>
+  <li>verdiğiniz talimat (örneğin bir çeviri için hedef dil),</li>
+  <li>kalan enerjinizi kontrol etmek için kullanılan anonim tanımlayıcınız.</li>
+</ul>
+<p>Bu istek, <strong>Cloudflare Workers</strong> üzerinde barındırılan kendi işleme servisimizden geçerek <strong>OpenRouter</strong>'a iletilir. OpenRouter, isteği birkaç üçüncü taraf yapay zekâ sağlayıcısından birine yönlendiren bir yönlendirme platformudur. Uygunluk durumuna göre metniniz DeepSeek, Qwen (Alibaba) veya MiniMax gibi modeller ve bu modelleri barındıran altyapı sağlayıcıları tarafından işlenebilir.</p>
+
+<div class="note">
+  <strong>Lütfen dikkat:</strong> bu yapay zekâ sağlayıcıları Çin dahil olmak üzere çeşitli ülkelerde faaliyet göstermektedir. Bu nedenle metniniz kendi ülkenizin dışındaki sunucularda, o ülkenin yasalarına tabi olarak işlenebilir. Belirli bir metnin bu şekilde işlenmesini istemiyorsanız, o metin üzerinde yapay zekâ özelliği çalıştırmamanız yeterlidir — Uygulamanın geri kalanı tamamen çevrimdışı çalışır.
+</div>
+
+<p>Notlarınızı herhangi bir yapay zekâ modelini eğitmek için kullanmıyoruz. Ancak her yapay zekâ sağlayıcısı, kendi gizlilik ve veri saklama uygulamalarına sahip bağımsız bir şirkettir ve bunlar bizim kontrolümüzde değildir. Kendi işleme servisimiz notlarınızın içeriğini kaydetmez veya saklamaz.</p>
+
+<h2>5. Enerji ve reklamlar</h2>
+<p>Uygulama, her gün ücretsiz olarak ne kadar yapay zekâ işlemi yapılabileceğini sınırlayan bir "enerji" sistemi içerir. Anonim tanımlayıcınız, kalan enerjiniz ve o gün izlediğiniz ödüllü reklam sayısı bir Cloudflare anahtar-değer deposunda tutulur. Bu kayıtlar otomatik olarak silinir ve hiçbir kişisel bilgi içermez.</p>
+<p>Enerjinizi yenilemek için ödüllü bir reklam izlemeyi tercih edebilirsiniz. Reklamlar <strong>Google AdMob</strong> tarafından sağlanır. Bir reklam izlediğinizde Google, kendi politikaları doğrultusunda reklam tanımlayıcınız ve cihaz bilgileriniz gibi verileri toplayabilir. Bunları <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google'ın gizlilik sayfasından</a> inceleyebilirsiniz. Reklamlar tamamen isteğe bağlıdır — Uygulama hiç reklam izlemeden de eksiksiz kullanılabilir.</p>
+
+<h2>6. İzinler</h2>
+<ul>
+  <li><strong>İnternet erişimi</strong> — yalnızca yapay zekâ özellikleri ve reklamlar için gereklidir.</li>
+  <li><strong>Bildirimler</strong> — yalnızca bir notu ilk kez bildirim çubuğuna sabitlediğiniz anda istenir. Reddederseniz sadece o özellik kullanılamaz; diğer her şey çalışmaya devam eder.</li>
+</ul>
+
+<h2>7. Çocuklar</h2>
+<p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek onlardan bilgi toplamayız.</p>
+
+<h2>8. Seçimleriniz</h2>
+<ul>
+  <li>Yapay zekâ özelliklerini hiç tetiklemeyerek Uygulamayı tamamen çevrimdışı kullanabilirsiniz.</li>
+  <li>Notlarınızı ayarlar ekranından istediğiniz zaman dışa aktarabilirsiniz.</li>
+  <li>Uygulamayı kaldırarak veya cihaz ayarlarından depolamasını temizleyerek yerel olarak saklanan tüm verileri silebilirsiniz.</li>
+  <li>Verilerinizle ilgili her türlü soru veya talebiniz için <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a> adresinden bize ulaşabilirsiniz.</li>
+</ul>
+
+<h2>9. Bu politikadaki değişiklikler</h2>
+<p>Uygulama değiştikçe bu politikayı güncelleyebiliriz — örneğin bir yapay zekâ sağlayıcısı eklersek veya değiştirirsek. Sayfanın başındaki tarih her zaman en son güncellemeyi gösterir. Bir değişiklikten sonra Uygulamayı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
+
+<footer>
+  DerNotes &middot; <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a> &middot; <a href="terms.html">Terms / Kullanım Şartları</a>
+</footer>
+
+</div>
+</body>
+</html>
