@@ -79,7 +79,7 @@
 
 <!-- ══════════════════ ENGLISH ══════════════════ -->
 <h1>Privacy Policy</h1>
-<p class="meta">DerNotes &middot; Last updated: 19 September 2026</p>
+<p class="meta">DerNotes &middot; Last updated: 24 September 2026</p>
 
 <div class="langbar">
   <a href="#tr">Türkçe için tıklayın ↓</a>
@@ -97,7 +97,7 @@
 
 <h2>3. No account, no sign-up</h2>
 <p>The App does not ask you to register, and does not collect your name, e-mail address, phone number or any other directly identifying information.</p>
-<p>To make the AI features work, the App creates an <strong>anonymous identity</strong> through Firebase Authentication. This is a random identifier with no personal information attached to it. We use it for one purpose only: to count how much of the daily free AI allowance ("energy") a device has used. This identifier is regenerated if you uninstall and reinstall the App.</p>
+<p>To make the AI features work, the App creates an <strong>anonymous identity</strong> through Firebase Authentication. This is a random identifier with no personal information attached to it. We use it only to keep track of your daily free AI allowance ("energy") and to credit energy you earn by watching rewarded ads (see section 5). This identifier is regenerated if you uninstall and reinstall the App.</p>
 
 <h2>4. What happens when you use an AI feature</h2>
 <p>The AI features are the only case in which content leaves your device. This only happens when you actively trigger them — for example by opening the AI panel, typing the in-note trigger keyword, or selecting text and choosing an AI action from the toolbar. The App never sends your notes in the background.</p>
@@ -113,22 +113,28 @@
   <strong>Please note:</strong> these AI providers operate in various countries, including China. Your text may therefore be processed on servers outside your own country, under that country's laws. If you do not want a particular piece of text to be processed this way, simply do not run an AI feature on it — the rest of the App works entirely offline.
 </div>
 
-<p>We do not use your notes to train any AI model. However, each AI provider is an independent company with its own privacy and data-retention practices, and we do not control them. Our processing service does not log or store the content of your notes.</p>
+<p>We do not use your notes to train any AI model. However, each AI provider is an independent company with its own privacy and data-retention practices, and we do not control them. Our processing service does not log or store the content of your notes. It only records technical events (for example, whether a request passed the security check described in section 6), without your note content, your identifier or your IP address.</p>
 
 <h2>5. Energy and advertising</h2>
 <p>The App includes an "energy" system that limits how much AI processing is available for free each day. Your anonymous identifier, your remaining energy and the number of rewarded ads you have watched today are stored in a Cloudflare key-value store. These records expire automatically and contain no personal information.</p>
-<p>You may choose to watch a rewarded advertisement to restore energy. Ads are provided by <strong>Google AdMob</strong>. When you watch an ad, Google may collect data such as your advertising identifier and device information in accordance with its own policies. You can review these at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's privacy page</a>. Ads are entirely optional — the App is fully usable without ever watching one.</p>
+<p>To prevent abuse of the free allowance (for example, creating many new anonymous identities from the same network), we also keep a short-lived counter of how many new anonymous identities received free energy from the same network on a given day. The network address is stored only as a one-way hash — never as your actual IP address — and the counter is deleted automatically after about one day.</p>
+<p>You may choose to watch a rewarded advertisement to restore energy. Ads are provided by <strong>Google AdMob</strong>. When you watch an ad, Google may collect data such as your advertising identifier and device information in accordance with its own policies. You can review these at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's privacy page</a>. To confirm that an ad was actually watched, the App passes your anonymous identifier to AdMob, and Google's servers notify our processing service when the reward is earned. We store the reward's transaction ID for about two days only to make sure the same reward is not credited twice. Ads are entirely optional — the App is fully usable without ever watching one.</p>
 
-<h2>6. Permissions</h2>
+<h2>6. Crash reports and app security</h2>
+<p><strong>Crash reports.</strong> If the App crashes, a crash report is sent to <strong>Firebase Crashlytics</strong> (a Google service) so that we can find and fix the problem. A crash report contains technical information such as where in the code the crash happened, the App version, your device model and Android version, and a random installation identifier created by Crashlytics. Crash reports never contain the content of your notes, and we do not link them to your anonymous identity.</p>
+<p><strong>App integrity checks.</strong> To protect the AI features from bots and modified copies of the App, the App uses <strong>Firebase App Check</strong> together with Google's <strong>Play Integrity API</strong>. This lets our processing service verify that a request comes from a genuine copy of the App installed from Google Play on a genuine device. As part of this check, Google may process information about your device and the App's installation. The check contains no note content.</p>
+<p>These services are provided by Google under its own policies, which you can review at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+<h2>7. Permissions</h2>
 <ul>
-  <li><strong>Internet access</strong> — required only for AI features and advertisements.</li>
+  <li><strong>Internet access</strong> — used only for AI features, advertisements, the security checks and crash reports described above.</li>
   <li><strong>Notifications</strong> — requested only at the moment you first pin a note to your notification bar. If you decline, only that feature is unavailable; everything else keeps working.</li>
 </ul>
 
-<h2>7. Children</h2>
+<h2>8. Children</h2>
 <p>The App is not directed at children under 13, and we do not knowingly collect information from them.</p>
 
-<h2>8. Your choices</h2>
+<h2>9. Your choices</h2>
 <ul>
   <li>Use the App fully offline by not triggering AI features.</li>
   <li>Export your notes at any time from the settings screen.</li>
@@ -136,14 +142,14 @@
   <li>Contact us at <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a> with any question or request regarding your data.</li>
 </ul>
 
-<h2>9. Changes to this policy</h2>
+<h2>10. Changes to this policy</h2>
 <p>We may update this policy as the App changes — for example if we add or replace an AI provider. The date at the top of this page always shows the latest revision. Continuing to use the App after a change means you accept the updated policy.</p>
 
 <hr class="divider">
 
 <!-- ══════════════════ TÜRKÇE ══════════════════ -->
 <h1 id="tr">Gizlilik Politikası</h1>
-<p class="meta">DerNotes &middot; Son güncelleme: 19 Eylül 2026</p>
+<p class="meta">DerNotes &middot; Son güncelleme: 24 Eylül 2026</p>
 
 <div class="langbar">
   <a href="#">↑ For English</a>
@@ -161,7 +167,7 @@
 
 <h2>3. Hesap yok, kayıt yok</h2>
 <p>Uygulama sizden kayıt olmanızı istemez; adınızı, e-posta adresinizi, telefon numaranızı veya sizi doğrudan tanımlayan başka bir bilgiyi toplamaz.</p>
-<p>Yapay zekâ özelliklerinin çalışabilmesi için Uygulama, Firebase Authentication aracılığıyla <strong>anonim bir kimlik</strong> oluşturur. Bu, hiçbir kişisel bilgiye bağlı olmayan rastgele bir tanımlayıcıdır. Bunu tek bir amaçla kullanırız: bir cihazın günlük ücretsiz yapay zekâ hakkının ("enerji") ne kadarını kullandığını saymak. Uygulamayı kaldırıp yeniden kurarsanız bu tanımlayıcı yeniden oluşturulur.</p>
+<p>Yapay zekâ özelliklerinin çalışabilmesi için Uygulama, Firebase Authentication aracılığıyla <strong>anonim bir kimlik</strong> oluşturur. Bu, hiçbir kişisel bilgiye bağlı olmayan rastgele bir tanımlayıcıdır. Bunu yalnızca günlük ücretsiz yapay zekâ hakkınızı ("enerji") takip etmek ve ödüllü reklam izleyerek kazandığınız enerjiyi hesabınıza eklemek için kullanırız (bkz. bölüm 5). Uygulamayı kaldırıp yeniden kurarsanız bu tanımlayıcı yeniden oluşturulur.</p>
 
 <h2>4. Bir yapay zekâ özelliği kullandığınızda ne olur</h2>
 <p>İçeriğin cihazınızdan çıktığı tek durum yapay zekâ özellikleridir. Bu da yalnızca siz bu özellikleri bilerek tetiklediğinizde gerçekleşir — örneğin yapay zekâ panelini açtığınızda, not içindeki tetikleyici kelimeyi yazdığınızda ya da bir metni seçip araç çubuğundan bir yapay zekâ işlemi seçtiğinizde. Uygulama notlarınızı asla arka planda göndermez.</p>
@@ -177,22 +183,28 @@
   <strong>Lütfen dikkat:</strong> bu yapay zekâ sağlayıcıları Çin dahil olmak üzere çeşitli ülkelerde faaliyet göstermektedir. Bu nedenle metniniz kendi ülkenizin dışındaki sunucularda, o ülkenin yasalarına tabi olarak işlenebilir. Belirli bir metnin bu şekilde işlenmesini istemiyorsanız, o metin üzerinde yapay zekâ özelliği çalıştırmamanız yeterlidir — Uygulamanın geri kalanı tamamen çevrimdışı çalışır.
 </div>
 
-<p>Notlarınızı herhangi bir yapay zekâ modelini eğitmek için kullanmıyoruz. Ancak her yapay zekâ sağlayıcısı, kendi gizlilik ve veri saklama uygulamalarına sahip bağımsız bir şirkettir ve bunlar bizim kontrolümüzde değildir. Kendi işleme servisimiz notlarınızın içeriğini kaydetmez veya saklamaz.</p>
+<p>Notlarınızı herhangi bir yapay zekâ modelini eğitmek için kullanmıyoruz. Ancak her yapay zekâ sağlayıcısı, kendi gizlilik ve veri saklama uygulamalarına sahip bağımsız bir şirkettir ve bunlar bizim kontrolümüzde değildir. Kendi işleme servisimiz notlarınızın içeriğini kaydetmez veya saklamaz. Yalnızca teknik olayları (örneğin bir isteğin bölüm 6'da anlatılan güvenlik kontrolünden geçip geçmediğini) kaydeder; bu kayıtlarda not içeriğiniz, tanımlayıcınız veya IP adresiniz bulunmaz.</p>
 
 <h2>5. Enerji ve reklamlar</h2>
 <p>Uygulama, her gün ücretsiz olarak ne kadar yapay zekâ işlemi yapılabileceğini sınırlayan bir "enerji" sistemi içerir. Anonim tanımlayıcınız, kalan enerjiniz ve o gün izlediğiniz ödüllü reklam sayısı bir Cloudflare anahtar-değer deposunda tutulur. Bu kayıtlar otomatik olarak silinir ve hiçbir kişisel bilgi içermez.</p>
-<p>Enerjinizi yenilemek için ödüllü bir reklam izlemeyi tercih edebilirsiniz. Reklamlar <strong>Google AdMob</strong> tarafından sağlanır. Bir reklam izlediğinizde Google, kendi politikaları doğrultusunda reklam tanımlayıcınız ve cihaz bilgileriniz gibi verileri toplayabilir. Bunları <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google'ın gizlilik sayfasından</a> inceleyebilirsiniz. Reklamlar tamamen isteğe bağlıdır — Uygulama hiç reklam izlemeden de eksiksiz kullanılabilir.</p>
+<p>Ücretsiz hakkın kötüye kullanılmasını önlemek için (örneğin aynı ağdan çok sayıda yeni anonim kimlik oluşturulmasını), bir gün içinde aynı ağdan kaç yeni anonim kimliğin ücretsiz enerji aldığını tutan kısa ömürlü bir sayaç da tutarız. Ağ adresi yalnızca tek yönlü bir özet (hash) olarak saklanır — gerçek IP adresiniz asla saklanmaz — ve bu sayaç yaklaşık bir gün sonra otomatik olarak silinir.</p>
+<p>Enerjinizi yenilemek için ödüllü bir reklam izlemeyi tercih edebilirsiniz. Reklamlar <strong>Google AdMob</strong> tarafından sağlanır. Bir reklam izlediğinizde Google, kendi politikaları doğrultusunda reklam tanımlayıcınız ve cihaz bilgileriniz gibi verileri toplayabilir. Bunları <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google'ın gizlilik sayfasından</a> inceleyebilirsiniz. Reklamın gerçekten izlendiğini doğrulamak için Uygulama anonim tanımlayıcınızı AdMob'a iletir; ödül kazanıldığında Google'ın sunucuları bunu işleme servisimize bildirir. Aynı ödülün iki kez eklenmemesi için ödülün işlem numarasını yalnızca yaklaşık iki gün saklarız. Reklamlar tamamen isteğe bağlıdır — Uygulama hiç reklam izlemeden de eksiksiz kullanılabilir.</p>
 
-<h2>6. İzinler</h2>
+<h2>6. Çökme raporları ve uygulama güvenliği</h2>
+<p><strong>Çökme raporları.</strong> Uygulama çökerse, sorunu bulup düzeltebilmemiz için <strong>Firebase Crashlytics</strong>'e (bir Google hizmeti) bir çökme raporu gönderilir. Çökme raporu; çökmenin kodun neresinde olduğu, Uygulama sürümü, cihaz modeliniz ve Android sürümünüz ile Crashlytics tarafından oluşturulan rastgele bir kurulum tanımlayıcısı gibi teknik bilgiler içerir. Çökme raporları notlarınızın içeriğini asla içermez ve bunları anonim kimliğinizle ilişkilendirmeyiz.</p>
+<p><strong>Uygulama bütünlüğü kontrolleri.</strong> Yapay zekâ özelliklerini botlara ve Uygulamanın değiştirilmiş kopyalarına karşı korumak için Uygulama, Google'ın <strong>Play Integrity API</strong>'si ile birlikte <strong>Firebase App Check</strong> kullanır. Bu sayede işleme servisimiz, bir isteğin Google Play'den yüklenmiş gerçek bir Uygulama kopyasından ve gerçek bir cihazdan geldiğini doğrulayabilir. Bu kontrolün bir parçası olarak Google, cihazınız ve Uygulamanın kurulumu hakkındaki bilgileri işleyebilir. Kontrol hiçbir not içeriği içermez.</p>
+<p>Bu hizmetler Google tarafından kendi politikaları çerçevesinde sağlanır; bunları <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google'ın Gizlilik Politikası</a>'ndan inceleyebilirsiniz.</p>
+
+<h2>7. İzinler</h2>
 <ul>
-  <li><strong>İnternet erişimi</strong> — yalnızca yapay zekâ özellikleri ve reklamlar için gereklidir.</li>
+  <li><strong>İnternet erişimi</strong> — yalnızca yapay zekâ özellikleri, reklamlar ve yukarıda anlatılan güvenlik kontrolleri ile çökme raporları için kullanılır.</li>
   <li><strong>Bildirimler</strong> — yalnızca bir notu ilk kez bildirim çubuğuna sabitlediğiniz anda istenir. Reddederseniz sadece o özellik kullanılamaz; diğer her şey çalışmaya devam eder.</li>
 </ul>
 
-<h2>7. Çocuklar</h2>
+<h2>8. Çocuklar</h2>
 <p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek onlardan bilgi toplamayız.</p>
 
-<h2>8. Seçimleriniz</h2>
+<h2>9. Seçimleriniz</h2>
 <ul>
   <li>Yapay zekâ özelliklerini hiç tetiklemeyerek Uygulamayı tamamen çevrimdışı kullanabilirsiniz.</li>
   <li>Notlarınızı ayarlar ekranından istediğiniz zaman dışa aktarabilirsiniz.</li>
@@ -200,7 +212,7 @@
   <li>Verilerinizle ilgili her türlü soru veya talebiniz için <a href="mailto:akocahmeta@gmail.com">akocahmeta@gmail.com</a> adresinden bize ulaşabilirsiniz.</li>
 </ul>
 
-<h2>9. Bu politikadaki değişiklikler</h2>
+<h2>10. Bu politikadaki değişiklikler</h2>
 <p>Uygulama değiştikçe bu politikayı güncelleyebiliriz — örneğin bir yapay zekâ sağlayıcısı eklersek veya değiştirirsek. Sayfanın başındaki tarih her zaman en son güncellemeyi gösterir. Bir değişiklikten sonra Uygulamayı kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
 
 <footer>
