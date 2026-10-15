@@ -79,7 +79,7 @@
 
 <!-- ══════════════════ ENGLISH ══════════════════ -->
 <h1>Privacy Policy</h1>
-<p class="meta">DerNotes &middot; Last updated: 24 September 2026</p>
+<p class="meta">DerNotes &middot; Last updated: 15 October 2026</p>
 
 <div class="langbar">
   <a href="#tr">Türkçe için tıklayın ↓</a>
@@ -100,14 +100,21 @@
 <p>To make the AI features work, the App creates an <strong>anonymous identity</strong> through Firebase Authentication. This is a random identifier with no personal information attached to it. We use it only to keep track of your daily free AI allowance ("energy") and to credit energy you earn by watching rewarded ads (see section 5). This identifier is regenerated if you uninstall and reinstall the App.</p>
 
 <h2>4. What happens when you use an AI feature</h2>
-<p>The AI features are the only case in which content leaves your device. This only happens when you actively trigger them — for example by opening the AI panel, typing the in-note trigger keyword, or selecting text and choosing an AI action from the toolbar. The App never sends your notes in the background.</p>
+<p>The AI features are the only case in which content leaves your device. This only happens when you actively trigger them — for example by opening the AI panel, typing the in-note trigger keyword, selecting text and choosing an AI action from the toolbar, or scanning a page with "Mixed Text" (see below). The App never sends your notes or photos in the background.</p>
 <p>When you trigger an AI feature, the following is sent:</p>
 <ul>
   <li>the text you are working on (the selected text, the current note, or the part of the note above your cursor, depending on the feature),</li>
   <li>the instruction you gave (for example the target language for a translation),</li>
   <li>your anonymous identifier, used to check your remaining energy.</li>
 </ul>
-<p>This request travels through our own processing service, hosted on <strong>Cloudflare Workers</strong>, which forwards it to <strong>OpenRouter</strong>. OpenRouter is an AI routing platform that passes the request to one of several third-party AI model providers. Depending on availability, your text may be processed by models such as DeepSeek, Qwen (Alibaba) or MiniMax, and by the infrastructure providers that host them.</p>
+<p>This request travels through our own processing service, hosted on <strong>Cloudflare Workers</strong>, which forwards it to <strong>OpenRouter</strong>. OpenRouter is an AI routing platform that passes the request to one of several third-party AI model providers. Depending on availability, your text may be processed by models such as Google Gemini, DeepSeek, Qwen (Alibaba) or MiniMax, and by the infrastructure providers that host them.</p>
+
+<h3>Text scanning (OCR)</h3>
+<p>The App can read text from photos and add it to your note. You choose the pages yourself, using Google Play services' document scanner or your device's photo picker. The App does not request camera or photo library permission.</p>
+<ul>
+  <li><strong>"Plain Text" scanning</strong> is done entirely on your device with Google ML Kit. The photo never leaves your device. ML Kit may send technical usage and performance information to Google, but never the photo or the recognized text.</li>
+  <li><strong>"Mixed Text" scanning</strong> is an AI feature. Each page you select is resized on your device and sent through our processing service to OpenRouter, only so that an AI model can read the text on that page. Photos are not stored on our processing service, not written to its logs and not used for any other purpose. The recognized text is added to your note on your device.</li>
+</ul>
 
 <div class="note">
   <strong>Please note:</strong> these AI providers operate in various countries, including China. Your text may therefore be processed on servers outside your own country, under that country's laws. If you do not want a particular piece of text to be processed this way, simply do not run an AI feature on it — the rest of the App works entirely offline.
@@ -116,7 +123,7 @@
 <p>We do not use your notes to train any AI model. However, each AI provider is an independent company with its own privacy and data-retention practices, and we do not control them. Our processing service does not log or store the content of your notes. It only records technical events (for example, whether a request passed the security check described in section 6), without your note content, your identifier or your IP address.</p>
 
 <h2>5. Energy and advertising</h2>
-<p>The App includes an "energy" system that limits how much AI processing is available for free each day. Your anonymous identifier, your remaining energy and the number of rewarded ads you have watched today are stored in a Cloudflare key-value store. These records expire automatically and contain no personal information.</p>
+<p>The App includes an "energy" system that limits how much AI processing is available for free each day. Your anonymous identifier, your remaining energy and the number of rewarded ads you have watched today are stored in Cloudflare's storage services. These records expire automatically and contain no personal information.</p>
 <p>To prevent abuse of the free allowance (for example, creating many new anonymous identities from the same network), we also keep a short-lived counter of how many new anonymous identities received free energy from the same network on a given day. The network address is stored only as a one-way hash — never as your actual IP address — and the counter is deleted automatically after about one day.</p>
 <p>You may choose to watch a rewarded advertisement to restore energy. Ads are provided by <strong>Google AdMob</strong>. When you watch an ad, Google may collect data such as your advertising identifier and device information in accordance with its own policies. You can review these at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's privacy page</a>. To confirm that an ad was actually watched, the App passes your anonymous identifier to AdMob, and Google's servers notify our processing service when the reward is earned. We store the reward's transaction ID for about two days only to make sure the same reward is not credited twice. Ads are entirely optional — the App is fully usable without ever watching one.</p>
 
@@ -129,6 +136,7 @@
 <ul>
   <li><strong>Internet access</strong> — used only for AI features, advertisements, the security checks and crash reports described above.</li>
   <li><strong>Notifications</strong> — requested only at the moment you first pin a note to your notification bar. If you decline, only that feature is unavailable; everything else keeps working.</li>
+  <li><strong>Camera and photos</strong> — not requested. Text scanning uses Google Play services' document scanner and the system photo picker, which give the App only the pages you choose.</li>
 </ul>
 
 <h2>8. Children</h2>
@@ -149,7 +157,7 @@
 
 <!-- ══════════════════ TÜRKÇE ══════════════════ -->
 <h1 id="tr">Gizlilik Politikası</h1>
-<p class="meta">DerNotes &middot; Son güncelleme: 24 Eylül 2026</p>
+<p class="meta">DerNotes &middot; Son güncelleme: 15 Ekim 2026</p>
 
 <div class="langbar">
   <a href="#">↑ For English</a>
@@ -170,14 +178,21 @@
 <p>Yapay zekâ özelliklerinin çalışabilmesi için Uygulama, Firebase Authentication aracılığıyla <strong>anonim bir kimlik</strong> oluşturur. Bu, hiçbir kişisel bilgiye bağlı olmayan rastgele bir tanımlayıcıdır. Bunu yalnızca günlük ücretsiz yapay zekâ hakkınızı ("enerji") takip etmek ve ödüllü reklam izleyerek kazandığınız enerjiyi hesabınıza eklemek için kullanırız (bkz. bölüm 5). Uygulamayı kaldırıp yeniden kurarsanız bu tanımlayıcı yeniden oluşturulur.</p>
 
 <h2>4. Bir yapay zekâ özelliği kullandığınızda ne olur</h2>
-<p>İçeriğin cihazınızdan çıktığı tek durum yapay zekâ özellikleridir. Bu da yalnızca siz bu özellikleri bilerek tetiklediğinizde gerçekleşir — örneğin yapay zekâ panelini açtığınızda, not içindeki tetikleyici kelimeyi yazdığınızda ya da bir metni seçip araç çubuğundan bir yapay zekâ işlemi seçtiğinizde. Uygulama notlarınızı asla arka planda göndermez.</p>
+<p>İçeriğin cihazınızdan çıktığı tek durum yapay zekâ özellikleridir. Bu da yalnızca siz bu özellikleri bilerek tetiklediğinizde gerçekleşir — örneğin yapay zekâ panelini açtığınızda, not içindeki tetikleyici kelimeyi yazdığınızda, bir metni seçip araç çubuğundan bir yapay zekâ işlemi seçtiğinizde ya da "Karışık Metin" ile bir sayfa taradığınızda (aşağıya bakın). Uygulama notlarınızı veya fotoğraflarınızı asla arka planda göndermez.</p>
 <p>Bir yapay zekâ özelliğini tetiklediğinizde şunlar gönderilir:</p>
 <ul>
   <li>üzerinde çalıştığınız metin (özelliğe göre: seçtiğiniz metin, o anki notunuz veya imlecinizin üzerinde kalan not bölümü),</li>
   <li>verdiğiniz talimat (örneğin bir çeviri için hedef dil),</li>
   <li>kalan enerjinizi kontrol etmek için kullanılan anonim tanımlayıcınız.</li>
 </ul>
-<p>Bu istek, <strong>Cloudflare Workers</strong> üzerinde barındırılan kendi işleme servisimizden geçerek <strong>OpenRouter</strong>'a iletilir. OpenRouter, isteği birkaç üçüncü taraf yapay zekâ sağlayıcısından birine yönlendiren bir yönlendirme platformudur. Uygunluk durumuna göre metniniz DeepSeek, Qwen (Alibaba) veya MiniMax gibi modeller ve bu modelleri barındıran altyapı sağlayıcıları tarafından işlenebilir.</p>
+<p>Bu istek, <strong>Cloudflare Workers</strong> üzerinde barındırılan kendi işleme servisimizden geçerek <strong>OpenRouter</strong>'a iletilir. OpenRouter, isteği birkaç üçüncü taraf yapay zekâ sağlayıcısından birine yönlendiren bir yönlendirme platformudur. Uygunluk durumuna göre metniniz Google Gemini, DeepSeek, Qwen (Alibaba) veya MiniMax gibi modeller ve bu modelleri barındıran altyapı sağlayıcıları tarafından işlenebilir.</p>
+
+<h3>Metin tarama (OCR)</h3>
+<p>Uygulama, fotoğraflardaki metni okuyup notunuza ekleyebilir. Sayfaları, Google Play Hizmetleri'nin belge tarayıcısını veya cihazınızın fotoğraf seçicisini kullanarak kendiniz seçersiniz. Uygulama kamera veya fotoğraf galerisi izni istemez.</p>
+<ul>
+  <li><strong>"Düz Metin" taraması</strong> tamamen cihazınızda, Google ML Kit ile yapılır. Fotoğraf cihazınızdan çıkmaz. ML Kit, Google'a teknik kullanım ve performans bilgileri gönderebilir; ancak fotoğrafı veya okunan metni asla göndermez.</li>
+  <li><strong>"Karışık Metin" taraması</strong> bir yapay zekâ özelliğidir. Seçtiğiniz her sayfa cihazınızda küçültülür ve yalnızca bir yapay zekâ modelinin o sayfadaki metni okuyabilmesi için işleme servisimiz üzerinden OpenRouter'a gönderilir. Fotoğraflar işleme servisimizde saklanmaz, kayıtlarına yazılmaz ve başka hiçbir amaçla kullanılmaz. Okunan metin, cihazınızda notunuza eklenir.</li>
+</ul>
 
 <div class="note">
   <strong>Lütfen dikkat:</strong> bu yapay zekâ sağlayıcıları Çin dahil olmak üzere çeşitli ülkelerde faaliyet göstermektedir. Bu nedenle metniniz kendi ülkenizin dışındaki sunucularda, o ülkenin yasalarına tabi olarak işlenebilir. Belirli bir metnin bu şekilde işlenmesini istemiyorsanız, o metin üzerinde yapay zekâ özelliği çalıştırmamanız yeterlidir — Uygulamanın geri kalanı tamamen çevrimdışı çalışır.
@@ -186,7 +201,7 @@
 <p>Notlarınızı herhangi bir yapay zekâ modelini eğitmek için kullanmıyoruz. Ancak her yapay zekâ sağlayıcısı, kendi gizlilik ve veri saklama uygulamalarına sahip bağımsız bir şirkettir ve bunlar bizim kontrolümüzde değildir. Kendi işleme servisimiz notlarınızın içeriğini kaydetmez veya saklamaz. Yalnızca teknik olayları (örneğin bir isteğin bölüm 6'da anlatılan güvenlik kontrolünden geçip geçmediğini) kaydeder; bu kayıtlarda not içeriğiniz, tanımlayıcınız veya IP adresiniz bulunmaz.</p>
 
 <h2>5. Enerji ve reklamlar</h2>
-<p>Uygulama, her gün ücretsiz olarak ne kadar yapay zekâ işlemi yapılabileceğini sınırlayan bir "enerji" sistemi içerir. Anonim tanımlayıcınız, kalan enerjiniz ve o gün izlediğiniz ödüllü reklam sayısı bir Cloudflare anahtar-değer deposunda tutulur. Bu kayıtlar otomatik olarak silinir ve hiçbir kişisel bilgi içermez.</p>
+<p>Uygulama, her gün ücretsiz olarak ne kadar yapay zekâ işlemi yapılabileceğini sınırlayan bir "enerji" sistemi içerir. Anonim tanımlayıcınız, kalan enerjiniz ve o gün izlediğiniz ödüllü reklam sayısı Cloudflare'in depolama hizmetlerinde tutulur. Bu kayıtlar otomatik olarak silinir ve hiçbir kişisel bilgi içermez.</p>
 <p>Ücretsiz hakkın kötüye kullanılmasını önlemek için (örneğin aynı ağdan çok sayıda yeni anonim kimlik oluşturulmasını), bir gün içinde aynı ağdan kaç yeni anonim kimliğin ücretsiz enerji aldığını tutan kısa ömürlü bir sayaç da tutarız. Ağ adresi yalnızca tek yönlü bir özet (hash) olarak saklanır — gerçek IP adresiniz asla saklanmaz — ve bu sayaç yaklaşık bir gün sonra otomatik olarak silinir.</p>
 <p>Enerjinizi yenilemek için ödüllü bir reklam izlemeyi tercih edebilirsiniz. Reklamlar <strong>Google AdMob</strong> tarafından sağlanır. Bir reklam izlediğinizde Google, kendi politikaları doğrultusunda reklam tanımlayıcınız ve cihaz bilgileriniz gibi verileri toplayabilir. Bunları <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google'ın gizlilik sayfasından</a> inceleyebilirsiniz. Reklamın gerçekten izlendiğini doğrulamak için Uygulama anonim tanımlayıcınızı AdMob'a iletir; ödül kazanıldığında Google'ın sunucuları bunu işleme servisimize bildirir. Aynı ödülün iki kez eklenmemesi için ödülün işlem numarasını yalnızca yaklaşık iki gün saklarız. Reklamlar tamamen isteğe bağlıdır — Uygulama hiç reklam izlemeden de eksiksiz kullanılabilir.</p>
 
@@ -199,6 +214,7 @@
 <ul>
   <li><strong>İnternet erişimi</strong> — yalnızca yapay zekâ özellikleri, reklamlar ve yukarıda anlatılan güvenlik kontrolleri ile çökme raporları için kullanılır.</li>
   <li><strong>Bildirimler</strong> — yalnızca bir notu ilk kez bildirim çubuğuna sabitlediğiniz anda istenir. Reddederseniz sadece o özellik kullanılamaz; diğer her şey çalışmaya devam eder.</li>
+  <li><strong>Kamera ve fotoğraflar</strong> — istenmez. Metin tarama, Uygulamaya yalnızca sizin seçtiğiniz sayfaları veren Google Play Hizmetleri belge tarayıcısını ve sistem fotoğraf seçicisini kullanır.</li>
 </ul>
 
 <h2>8. Çocuklar</h2>
